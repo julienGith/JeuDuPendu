@@ -1,0 +1,455 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TrouveLeMot</name>
+    </assembly>
+    <members>
+        <member name="M:Configuration.ListJoueurs.ReadTxt(System.String)">
+            <summary>
+            Permet la lecture du fichier texte contenant la liste des joueurs.
+            Créé des chaines en découpant la ligne lu à chaque ";".
+            Récupère les pseudo et les scores dans un tableau de chaine.
+            Affecte des valeurs au champs de la classe joueur.
+            </summary>
+            <param name="path"></param>
+        </member>
+        <member name="T:Configuration.Scores">
+            <summary>
+            Logique d'interaction pour Scores.xaml
+            </summary>
+            <summary>
+            Scores
+            </summary>
+        </member>
+        <member name="M:Configuration.Scores.AfficherSP">
+            <summary>
+            A faire liaison des données avec le databinding sur la listview du xalm.
+            Reprise de la méthode readtext de la classe liste joueur.
+            Permet la lecture du fichier texte contenant la liste des joueurs.
+            Créé des chaines en découpant la ligne lu à chaque ";".
+            Récupère les pseudo et les scores dans un tableau de chaine.
+            Affecte des valeurs au champs de la classe joueur.
+            Tant que le reader trouve du texte le processus continue.
+            Affiche les donnée dans des listesBox.
+            </summary>
+        </member>
+        <member name="M:Configuration.Scores.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:Configuration.AccueilJeu">
+            <summary>
+            Logique d'interaction pour AccueilJeu.xaml
+            </summary>
+            <summary>
+            AccueilJeu
+            </summary>
+        </member>
+        <member name="M:Configuration.AccueilJeu.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:Configuration.App">
+            <summary>
+            Logique d'interaction pour App.xaml
+            </summary>
+            <summary>
+            App
+            </summary>
+        </member>
+        <member name="M:Configuration.App.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="M:Configuration.App.Main">
+            <summary>
+            Application Entry Point.
+            </summary>
+        </member>
+        <member name="T:Configuration.Jeu">
+            <summary>
+            Logique d'interaction pour Jeu.xaml
+            A faire mettre à jour le code de lecture des fichiers de sauvegarde de toutes les classes.
+            </summary>
+            <summary>
+            Jeu
+            </summary>
+        </member>
+        <member name="M:Configuration.Jeu.#ctor">
+            <summary>
+            Regroupe  les methodes exécutées à l'ouverture de la fenêtre jeu.
+            </summary>
+        </member>
+        <member name="M:Configuration.Jeu.GenereClavier">
+            <summary>
+            Génération du clavier dans un wrapPanel qui permet le retour automatique à la ligne des boutons.
+            Instanciation de l'objet Thickness pour définir les marges extérieures des boutons.
+            Création de l'évènement délégué Button_click.
+            </summary>
+        </member>
+        <member name="M:Configuration.Jeu.Button_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Evènement délégué Click.
+            Applique le processus de découverte du mot.
+            Applique le processus de calcul du score.
+            Applique les processus de désactivation des bouttons de jeu afin de pas pouvoir continuer à jouer ou générer d'exceptions.
+            </summary>
+        </member>
+        <member name="M:Configuration.Jeu.ChargeLexique">
+            <summary>
+            METHODES
+            </summary>
+        </member>
+        <member name="M:Configuration.Jeu.RetraiterMot(System.String)">
+            <summary>
+            Reformate le mot taper par le joueur.
+            </summary>
+            <param name="mot"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Configuration.Jeu.IsNextEnable">
+            <summary>
+            Désactive le bouton manche suivante quand la dernière manche est atteinte.
+            </summary>
+        </member>
+        <member name="M:Configuration.Jeu.Chrono">
+            <summary>
+            Déclenche le chrono. Lie la propriété tick du chrono à l'évènement délégué chrono_tick. Détermine le temps entre 2 ticks.
+            </summary>
+        </member>
+        <member name="M:Configuration.Jeu.nbLettres">
+            <summary>
+            Remplie la texteBox lettres avec autant de tirets que de lettres dans le mot caché.
+            </summary>
+        </member>
+        <member name="M:Configuration.Jeu.TxtBpenalty_TextChanged(System.Object,System.Windows.Controls.TextChangedEventArgs)">
+            <summary>
+            Remplie la texteBox penalty avec les options choisies par le joueur.
+            </summary>
+        </member>
+        <member name="M:Configuration.Jeu.TxtBjoueur_GotFocus(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Supprime le texte de la texteBox joueur lorsqu'elle est sélectionnée.
+            </summary>
+        </member>
+        <member name="M:Configuration.Jeu.chrono_Tick(System.Object,System.EventArgs)">
+            <summary>
+            Permet l'incrémentation de j à chaque tick du chrono. Affiche le chrono (i) dans la texteBox compteur.
+            </summary>
+        </member>
+        <member name="M:Configuration.Jeu.TxtBmotCach_TextChanged(System.Object,System.Windows.Controls.TextChangedEventArgs)">
+            <summary>
+            Remplie la texteBox motcach avec un mot pris au hazard dans la liste des mots à trouver.
+            Le mot est supprimé afin de ne pas être réutilisé.
+            La liste des mots à trouver est sauvegardée.
+            </summary>
+        </member>
+        <member name="M:Configuration.Jeu.TxtBnbManches_TextChanged(System.Object,System.Windows.Controls.TextChangedEventArgs)">
+            <summary>
+            Remplie la texteBox NbManches avec les options choisies par le joueur.
+            </summary>
+        </member>
+        <member name="M:Configuration.Jeu.TxtBmanche_TextChanged(System.Object,System.Windows.Controls.TextChangedEventArgs)">
+            <summary>
+            Affiche l'int k dans la texteBox manche.
+            </summary>
+        </member>
+        <member name="M:Configuration.Jeu.TxtBessai_TextChanged(System.Object,System.Windows.Controls.TextChangedEventArgs)">
+            <summary>
+            Affiche l'int i dans la texteBox essai.
+            </summary>
+        </member>
+        <member name="M:Configuration.Jeu.TxtBtemps_TextChanged(System.Object,System.Windows.Controls.TextChangedEventArgs)">
+            <summary>
+            Remplie la texteBox temps avec les options choisies par le joueur.
+            </summary>
+        </member>
+        <member name="M:Configuration.Jeu.TxtBcompteur_TextChanged(System.Object,System.Windows.Controls.TextChangedEventArgs)">
+            <summary>
+            Permet l'affichage d'un message indique que la manche est perdue car le temps imparti est écoulé.
+            Désactive le bouton tenter afin que le joueur ne puisse pas poursuivre.
+            A faire supprimer la concaténation de la variable txtBmotCach.Text.
+            </summary>
+        </member>
+        <member name="M:Configuration.Jeu.BtnNext_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Passe à la manche suivante.
+            Réinitialise le Chrono.
+            Réactive le bouton tenter.
+            Supprime toutes les touches du clavier.
+            Regénère le clavier. Cette méthode permet de contourner le problème lier à la réactivation des bouttons désactivés.
+            Supprime le mot caché de la manche précédente.
+            Pioche un nouveau mot caché.
+            Remplie la texteBox lettre avec des tirets en fonction du nombre de lettres du mot caché.
+            </summary>
+        </member>
+        <member name="M:Configuration.Jeu.BtnTry_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Boutton Tenter.
+            Applique le processus de découverte du mot.
+            Pour une lettre proposé la position de ce caractère dans le mot caché est stocké dans la list stockpos.
+            Un stringbuilder écrit le caractère à la position donné ce qui supprime le tiret à cette position dans la texteBox lettres.
+            Applique le processus de calcul du score.
+            </summary>
+        </member>
+        <member name="M:Configuration.Jeu.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="M:Configuration.Joueur.ToString">
+            <summary>
+            Permet l'ajout du séparateur ";" lors de la création du fichier texte de la liste des joueurs.
+            </summary>
+        </member>
+        <member name="T:Configuration.MainWindow">
+            <summary>
+            Logique d'interaction pour MainWindow.xaml
+             A faire mettre à jour le code de lecture des fichiers de sauvegarde de toutes les classes.
+            </summary>
+            <summary>
+            MainWindow
+            </summary>
+        </member>
+        <member name="M:Configuration.MainWindow.RetraiterMot(System.String)">
+            <summary>
+            Retraite le mot saisie.
+            Applique la méthode ajoutMot au mot retraité.
+            </summary>
+        </member>
+        <member name="M:Configuration.MainWindow.EnableBtn">
+            <summary>
+            METHODES enable/disable des différents boutons.
+            </summary>
+        </member>
+        <member name="M:Configuration.MainWindow.ChargeLexique">
+            <summary>
+            Méthode permetant la lecture du fichier XML contenant les mots du lexique et l'ajout de son contenu dans la listBox lexique.
+            </summary>
+        </member>
+        <member name="M:Configuration.MainWindow.ChargeMots">
+            <summary>
+            Méthode permetant la lecture du fichier XML contenant les mots choisis pour le jeu et l'ajout de son contenu dans la listBox mots à trouver.
+            </summary>
+        </member>
+        <member name="M:Configuration.MainWindow.isSaisieValid(System.String)">
+            <summary>
+            Méthode vérifiant la validité de la saisie de l'utilisateur afin de renseigner le lexique avec des mots valides.
+            </summary>
+        </member>
+        <member name="M:Configuration.MainWindow.AjoutMot(System.String)">
+            <summary>
+            Méthode permettant l'ajout du mot saisie par l'utilisateur dans la listBox lexique et dans le fichier du XML contenant le lexique.
+            </summary>
+        </member>
+        <member name="M:Configuration.MainWindow.RetireMot">
+            <summary>
+            Méthode permettant le retrait d'un mot de la listBox lexique et du fichier XML contenant le lexique.
+            </summary>
+        </member>
+        <member name="M:Configuration.MainWindow.NiveauDifficile">
+            <summary>
+            Tri des mots du lexique en utilisant un lecteur de fichier XML qui lit le fichier XML contenant le lexique et retourne les mots de taille comprise entre 8 et 10 caractères.
+            </summary>
+        </member>
+        <member name="M:Configuration.MainWindow.NiveauExpert">
+            <summary>
+            Tri des mots du lexique en utilisant un lecteur de fichier XML qui lit le fichier XML contenant le lexique et retourne les mots de taille supèrieur à 10 caractères.
+            </summary>
+        </member>
+        <member name="M:Configuration.MainWindow.NiveauFacile">
+            <summary>
+            Tri des mots du lexique en utilisant un lecteur de fichier XML qui lit le fichier XML contenant le lexique et retourne les mots de taille comprise entre 5 et 8 caractères.
+            </summary>
+        </member>
+        <member name="M:Configuration.MainWindow.Transfert">
+            <summary>
+            Ajoute un mot du lexique à la liste des mots à trouver.
+            La liste des mots à trouver et le lexique sont sauvergardé lors de l'ajout.
+            </summary>
+        </member>
+        <member name="M:Configuration.MainWindow.Suppr">
+            <summary>
+            Transfère un mot de la liste des mots à trouver vers la liste du lexique.
+            La liste des mots à trouver et le lexique sont sauvergardé lors de l'ajout.
+            </summary>
+        </member>
+        <member name="M:Configuration.MainWindow.SupprDisable">
+            <summary>
+            Permet d'éviter une exeption en cas de tentative de retrait si la liste est vide. Le bouton est alors désactivé.
+            </summary>
+        </member>
+        <member name="M:Configuration.MainWindow.BtnAdd_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Le bouton alimente le lexique en tenant compte de la validité de la saisie.
+            Applique la méthode retraitement du mot.
+            Le e.Handled à true permet de bloquer l'ajout si elle n'est pas valide.
+            </summary>
+        </member>
+        <member name="M:Configuration.MainWindow.BtnClose_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Ferme la fenêtre de configuration.
+            </summary>
+        </member>
+        <member name="M:Configuration.MainWindow.BtnTransfert_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Transfert d'un mot du lexique vers la liste des mots à trouver.
+            </summary>
+        </member>
+        <member name="M:Configuration.MainWindow.BtnSupprTout_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Retrait de tout les mots de la liste des mots à trouver.
+            Les mots retournent dans la liste lexique. Ecrasement du fichier contenant la liste des mots à trouver.
+            </summary>
+        </member>
+        <member name="M:Configuration.MainWindow.BtnAddTout_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Ajout de tout les mots de la liste lexique dans la liste des mots à trouver.
+            Sauvergarde la liste des mots à trouver.
+            </summary>
+        </member>
+        <member name="M:Configuration.MainWindow.BtnSupr_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Supprime un mot de la liste des mots à trouver et l'ajoute à la liste lexique.
+            </summary>
+        </member>
+        <member name="M:Configuration.MainWindow.BtnRemove_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Supprime un mot de liste lexique et enregistre le nouveau lexique.
+            </summary>
+        </member>
+        <member name="M:Configuration.MainWindow.RBtnLexic_Checked(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            RADIO BOUTTONS permettant de passer de l'étape "lexique" à l'étape "Difficulté".
+            Désactive/Active les bouttons concernés.
+            </summary>
+        </member>
+        <member name="M:Configuration.MainWindow.NupManches_ValueChanged(System.Object,System.Windows.RoutedPropertyChangedEventArgs{System.Object})">
+            <summary>
+            numérique up and down déterminant le nombre de manches. valeur par défaut 1 et max 5 déterminé dans MainWindow.xalm.
+            </summary>   
+        </member>
+        <member name="M:Configuration.MainWindow.NupEssais_ValueChanged(System.Object,System.Windows.RoutedPropertyChangedEventArgs{System.Object})">
+            <summary>
+            numérique up and down déterminant le nombre d'essais. valeur par défaut 7 et pas de valeur max déterminé dans MainWindow.xalm.
+            </summary> 
+        </member>
+        <member name="M:Configuration.MainWindow.NupDurée_ValueChanged(System.Object,System.Windows.RoutedPropertyChangedEventArgs{System.Object})">
+            <summary>
+            numérique up and down déterminant la durée totale d'une manche. valeur par défaut 60, valeur max 600, incrément de 10 déterminé dans MainWindow.xalm.
+            </summary> 
+        </member>
+        <member name="M:Configuration.MainWindow.NupPtPerdu_ValueChanged(System.Object,System.Windows.RoutedPropertyChangedEventArgs{System.Object})">
+            <summary>
+            numérique up and down déterminant le nombre points perdus par essai. valeur par défaut 0 et max 3 déterminé dans MainWindow.xalm.
+            </summary> 
+        </member>
+        <member name="M:Configuration.MainWindow.BtnTri_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Bouton de tri alphabétique sur la liste lexique.
+            </summary>
+        </member>
+        <member name="M:Configuration.MainWindow.ListBoxCible_SelectionChanged(System.Object,System.Windows.Controls.SelectionChangedEventArgs)">
+            <summary>
+            Evite une exception si l'utilisateur tente de supprimer un mot de la liste des mots à trouver alors que la liste est vide.
+            Désactive le bouton quand la liste est vide.
+            </summary>
+        </member>
+        <member name="M:Configuration.MainWindow.TxtBoxMot_GotFocus(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Permet la suppression du texte de la textBox joueur quand la textbox à le focus.
+            </summary>
+        </member>
+        <member name="M:Configuration.MainWindow.RBtnDifficile_Checked(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Radio bouttons permettant le tri des mots en fonction de leur taille.
+            </summary>
+        </member>
+        <member name="M:Configuration.MainWindow.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:Configuration.Mots">
+            <summary>
+            Liste des mots à trouver "Mots" qui dérive de List.
+            </summary>
+        </member>
+        <member name="P:Configuration.Mots.MotCach">
+            <summary>
+            Choisi un mot aléatoirement dans la liste des mots à trouver.
+            </summary>
+        </member>
+        <member name="M:Configuration.Mots.Ajouter(System.String)">
+            <summary>
+            Methode pour ajouter un mot à la liste des mots à trouver si il n'est pas déjà présent.
+            </summary>
+            <param name="mot"></param>
+        </member>
+        <member name="M:Configuration.Mots.Remove(System.String)">
+            <summary>
+            Permet de retirer un mot de la liste des mot a trouver.
+            Evite une exception en laissant un mot dans la liste.
+            </summary>
+            <param name="mot"></param>
+        </member>
+        <member name="M:Configuration.Mots.SaveXML(System.String)">
+            <summary>
+            Methodes de sauvegarde/chargement du Lexique.
+            </summary>
+            <param name="path"></param>
+        </member>
+        <member name="M:Configuration.Mots.LoadXML(System.String)">
+            <summary>
+            A faire intégrer à la méthodes le remplissage de la liste lexique. La méthode lit mais n'enregistre rien dans la liste.
+            </summary>
+        </member>
+        <member name="T:Configuration.Properties.Resources">
+            <summary>
+              Une classe de ressource fortement typée destinée, entre autres, à la consultation des chaînes localisées.
+            </summary>
+        </member>
+        <member name="P:Configuration.Properties.Resources.ResourceManager">
+            <summary>
+              Retourne l'instance ResourceManager mise en cache utilisée par cette classe.
+            </summary>
+        </member>
+        <member name="P:Configuration.Properties.Resources.Culture">
+            <summary>
+              Remplace la propriété CurrentUICulture du thread actuel pour toutes
+              les recherches de ressources à l'aide de cette classe de ressource fortement typée.
+            </summary>
+        </member>
+        <member name="T:TrouveLeMot.Lexique">
+            <summary>
+            Lexique "Lexique" qui dérive de List.
+            </summary>
+        </member>
+        <member name="M:TrouveLeMot.Lexique.#ctor">
+            <summary>
+            Constructeur par défaut.
+            </summary>
+        </member>
+        <member name="M:TrouveLeMot.Lexique.Ajouter(System.String)">
+            <summary>
+            Methode pour ajouter un mot au Lexique si il n'est pas déjà présent.
+            </summary>
+            <param name="mot"></param>
+        </member>
+        <member name="M:TrouveLeMot.Lexique.SaveXML(System.String)">
+            <summary>
+            Methodes de sauvegarde/chargement du Lexique.
+            </summary>
+            <param name="path"></param>
+        </member>
+        <member name="M:TrouveLeMot.Lexique.LoadXML(System.String)">
+            <summary>
+            A faire intégrer à la méthodes le remplissage de la liste lexique. La méthode lit mais n'enregistre rien dans la liste.
+            </summary>
+            <param name="path"></param>
+        </member>
+    </members>
+</doc>
